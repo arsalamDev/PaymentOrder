@@ -1,0 +1,45 @@
+﻿@using PaymentOrder.WebAdminPanel.Models.Customers
+
+@model SaveCustomersViewModel
+
+<div class="modal-dialog modal-dialog-scrollable modal-lg">
+    <!-- Modal content -->
+    <div class="modal-content" id="editDebtModelBody">
+        <div style="overflow:auto;" class="modal-body">
+            <form asp-controller="Customers" asp-action="Submit" class="form-group">
+                <input hidden asp-for="Customer.Id" />
+                <input hidden asp-for="Customer.IsModified" />
+                <input hidden asp-for="Customer.IsCreated" />
+
+                <div class="form-group">
+                    <label for="name" class="mr-sm-2">Name:</label>
+                    <input asp-for="Customer.Name" class="form-control mb-2 mr-sm-2" />
+                    <span asp-validation-for="Customer.Name" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="name" class="mr-sm-2">Surname:</label>
+                    <input asp-for="Customer.Surname" class="form-control mb-2 mr-sm-2" />
+                    <span asp-validation-for="Customer.Surname" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="name" class="mr-sm-2">Email:</label>
+                    <input asp-for="Customer.Email" class="form-control mb-2 mr-sm-2" />
+                    <span asp-validation-for="Customer.Email" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="name" class="mr-sm-2">Telephone:</label>
+                    <input asp-for="Customer.Telephone" class="form-control mb-2 mr-sm-2" />
+                    <span asp-validation-for="Customer.Telephone" class="text-danger"></span>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary bgupdate">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<partial name="_ValidationScriptsPartial" />

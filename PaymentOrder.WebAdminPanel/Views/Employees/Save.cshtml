@@ -1,0 +1,45 @@
+﻿@using PaymentOrder.WebAdminPanel.Models.Employees
+
+@model SaveEmployeesViewModel
+
+<div class="modal-dialog modal-dialog-scrollable modal-lg">
+    <!-- Modal content -->
+    <div class="modal-content" id="editDebtModelBody">
+        <div style="overflow:auto;" class="modal-body">
+            <form asp-controller="Employees" asp-action="Submit" class="form-group">
+                <input hidden asp-for="Employee.Id"/>
+                <input hidden asp-for="Employee.IsModified" />
+                <input hidden asp-for="Employee.IsCreated" />
+
+               <div class="form-group">
+                    <label for="name" class="mr-sm-2">Name:</label>
+                    <input asp-for="Employee.Name" class="form-control mb-2 mr-sm-2" />
+                    <span asp-validation-for="Employee.Name" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="name" class="mr-sm-2">Surname:</label>
+                    <input asp-for="Employee.Surname" class="form-control mb-2 mr-sm-2" />
+                    <span asp-validation-for="Employee.Surname" class="text-danger"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="name" class="mr-sm-2">Email:</label>
+                    <input asp-for="Employee.Email" class="form-control mb-2 mr-sm-2" />
+                    <span asp-validation-for="Employee.Email" class="text-danger"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="name" class="mr-sm-2">Password:</label>
+                    <input asp-for="Employee.PasswordHash" class="form-control mb-2 mr-sm-2" />
+                    <span asp-validation-for="Employee.PasswordHash" class="text-danger"></span>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary bgupdate">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<partial name="_ValidationScriptsPartial"/>

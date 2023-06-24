@@ -1,0 +1,57 @@
+﻿@using PaymentOrder.WebAdminPanel.Models.Products
+
+@model SaveProductsViewModel
+
+<div class="modal-dialog modal-dialog-scrollable modal-lg">
+    <!-- Modal content -->
+    <div class="modal-content" id="editDebtModelBody">
+        <div style="overflow:auto;" class="modal-body">
+            <form asp-controller="Products" asp-action="Submit" class="form-group">
+                <input hidden asp-for="Products.Id" />
+                <input hidden asp-for="Products.IsModified" />
+                <input hidden asp-for="Products.IsCreated" />
+
+                <div class="form-group">
+                    <label for="name" class="mr-sm-2">Name:</label>
+                    <input asp-for="Products.Name" class="form-control mb-2 mr-sm-2" />
+                    <span asp-validation-for="Products.Name" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="name" class="mr-sm-2">Count:</label>
+                    <input asp-for="Products.Count" class="form-control mb-2 mr-sm-2" />
+                    <span asp-validation-for="Products.Count" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="name" class="mr-sm-2">Price:</label>
+                    <input asp-for="Products.Price" class="form-control mb-2 mr-sm-2" />
+                    <span asp-validation-for="Products.Price" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="name" class="mr-sm-2">Discount:</label>
+                    <input asp-for="Products.Discount" class="form-control mb-2 mr-sm-2" />
+                    <span asp-validation-for="Products.Discount" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="name" class="mr-sm-2">Discount Start Date:</label>
+                    <input asp-for="Products.DiscountStartDate" class="form-control mb-2 mr-sm-2" />
+                    <span asp-validation-for="Products.DiscountStartDate" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="name" class="mr-sm-2">Discount End Date:</label>
+                    <input asp-for="Products.DiscountEndDate" class="form-control mb-2 mr-sm-2" />
+                    <span asp-validation-for="Products.DiscountEndDate" class="text-danger"></span>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary bgupdate">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<partial name="_ValidationScriptsPartial" />

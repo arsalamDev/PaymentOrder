@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "PaymentOrder.Core": {
+      "commandName": "Project"
+    },
+    "Profile 1": {
+      "commandName": "Executable",
+      "executablePath": "C:\\IT\\Дипломная работа\\ArsoExpress\\App.config"
+    }
+  }
+}
