@@ -112,7 +112,7 @@
             var dataId = $(elem).data("id");
 
             $.ajax({
-                url: "/Customers/Save?id=" + dataId,
+                url: "/Employees/Save?id=" + dataId,
                 success: function (data) {
                     $('#createModal').html(data);
                     $("#createModal").modal("show");

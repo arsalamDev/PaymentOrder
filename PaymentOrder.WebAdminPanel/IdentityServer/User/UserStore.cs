@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
 using PaymentOrder.Core.Domain.Abstract;
 using PaymentOrder.Core.Domain.Entities.Auth;
 using System;
@@ -9,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PaymentOrder.WebAdminPanel.IdentityServer.User
 {
-    public class UserStore : IUserStore<AuthEntity> , IUserPasswordStore<AuthEntity>, IUserRoleStore<AuthEntity>
+    public class UserStore : IUserStore<AuthEntity>, IUserPasswordStore<AuthEntity>, IUserRoleStore<AuthEntity>
     {
         public readonly IUnitOfWork db;
         public UserStore(IUnitOfWork db)
@@ -20,17 +19,17 @@ namespace PaymentOrder.WebAdminPanel.IdentityServer.User
         #region Email
         public Task<IdentityResult> CreateAsync(AuthEntity user, CancellationToken cancellationToken)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public Task<IdentityResult> DeleteAsync(AuthEntity user, CancellationToken cancellationToken)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public void Dispose()
         {
-            
+
         }
 
         public Task<AuthEntity> FindByIdAsync(string userId, CancellationToken cancellationToken)
@@ -45,13 +44,13 @@ namespace PaymentOrder.WebAdminPanel.IdentityServer.User
         public Task<AuthEntity> FindByNameAsync(string normalizedUserName, CancellationToken cancellationToken)
         {
             var user = db.AuthRepository.GetEmail(normalizedUserName);
-            
+
             return Task.FromResult(user);
         }
 
         public Task<string> GetNormalizedUserNameAsync(AuthEntity user, CancellationToken cancellationToken)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public Task<string> GetUserIdAsync(AuthEntity user, CancellationToken cancellationToken)
@@ -66,17 +65,17 @@ namespace PaymentOrder.WebAdminPanel.IdentityServer.User
 
         public Task SetNormalizedUserNameAsync(AuthEntity user, string normalizedName, CancellationToken cancellationToken)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public Task SetUserNameAsync(AuthEntity user, string userName, CancellationToken cancellationToken)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public Task<IdentityResult> UpdateAsync(AuthEntity user, CancellationToken cancellationToken)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
         #endregion
 
@@ -88,12 +87,12 @@ namespace PaymentOrder.WebAdminPanel.IdentityServer.User
 
         public Task<bool> HasPasswordAsync(AuthEntity user, CancellationToken cancellationToken)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public Task SetPasswordHashAsync(AuthEntity user, string passwordHash, CancellationToken cancellationToken)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
         #endregion
 
@@ -101,7 +100,7 @@ namespace PaymentOrder.WebAdminPanel.IdentityServer.User
 
         public Task AddToRoleAsync(AuthEntity user, string roleName, CancellationToken cancellationToken)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public Task<IList<string>> GetRolesAsync(AuthEntity user, CancellationToken cancellationToken)
@@ -116,17 +115,17 @@ namespace PaymentOrder.WebAdminPanel.IdentityServer.User
 
         public Task<IList<AuthEntity>> GetUsersInRoleAsync(string roleName, CancellationToken cancellationToken)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public Task<bool> IsInRoleAsync(AuthEntity user, string roleName, CancellationToken cancellationToken)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public Task RemoveFromRoleAsync(AuthEntity user, string roleName, CancellationToken cancellationToken)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         #endregion

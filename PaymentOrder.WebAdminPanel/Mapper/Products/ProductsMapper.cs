@@ -13,15 +13,14 @@ namespace PaymentOrder.WebAdminPanel.Mapper.Products
             {
                 Id = model.Id,
                 Name = model.Name,
+                ProductCode = model.ProductCode,
                 Count = model.Count,
                 Price = model.Price,
-                Discount = model.Discount,
-                DiscountStartDate = model.DiscountStartDate,
-                DiscountEndDate = model.DiscountEndDate,
+                IdDiscount = model.IdDiscount,
                 IsModified = model.IsModified,
                 IsCreated = model.IsCreated,
                 IsDeleted = model.IsDeleted,
-            }; 
+            };
         }
 
         public override ProductsModel Map(ProductsEntity entity)
@@ -30,11 +29,10 @@ namespace PaymentOrder.WebAdminPanel.Mapper.Products
             {
                 Id = entity.Id,
                 Name = entity.Name,
+                ProductCode = entity.ProductCode,
                 Count = entity.Count,
                 Price = entity.Price,
-                Discount = entity.Discount,
-                DiscountStartDate = entity.DiscountStartDate,
-                DiscountEndDate = entity.DiscountEndDate,
+                IdDiscount = entity.IdDiscount,
                 IsModified = entity.IsModified,
                 IsCreated = entity.IsCreated,
                 IsDeleted = entity.IsDeleted,

@@ -21,7 +21,7 @@ namespace PaymentOrder.WebAdminPanel.IdentityServer.Role
 
         public void Dispose()
         {
-            
+
         }
 
         public Task<RoleEntity> FindByIdAsync(string roleId, CancellationToken cancellationToken)

@@ -1,7 +1,6 @@
 ﻿using PaymentOrder.Core.Domain.Entities.Customers;
 using PaymentOrder.Core.Domain.Entities.Employees;
 using PaymentOrder.WebAdminPanel.Models.Customers;
-using PaymentOrder.WebAdminPanel.Models.Employees;
 
 namespace PaymentOrder.WebAdminPanel.Mapper.Customers
 {

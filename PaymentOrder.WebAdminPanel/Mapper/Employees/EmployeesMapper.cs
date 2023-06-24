@@ -1,7 +1,5 @@
 ﻿using PaymentOrder.Core.Domain.Entities.Employees;
-using PaymentOrder.WebAdminPanel.Models;
 using PaymentOrder.WebAdminPanel.Models.Employees;
-using System.Reflection;
 
 namespace PaymentOrder.WebAdminPanel.Mapper.Employees
 {
@@ -15,7 +13,7 @@ namespace PaymentOrder.WebAdminPanel.Mapper.Employees
                 Name = model.Name,
                 Surname = model.Surname,
                 Email = model.Email,
-                PasswordHash =model.PasswordHash,
+                PasswordHash = model.PasswordHash,
                 IsModified = model.IsModified,
                 IsCreated = model.IsCreated,
                 IsDeleted = model.IsDeleted,

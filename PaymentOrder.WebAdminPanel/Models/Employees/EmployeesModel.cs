@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PaymentOrder.WebAdminPanel.Models;
+using System;
 
 namespace PaymentOrder.WebAdminPanel.Models.Employees
 {

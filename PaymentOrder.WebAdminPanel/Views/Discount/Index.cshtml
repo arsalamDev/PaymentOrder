@@ -1,15 +1,15 @@
-﻿@using PaymentOrder.WebAdminPanel.Models.Products
+﻿@using PaymentOrder.WebAdminPanel.Models.Discount
 
-@model ProductsViewModel
+@model DiscountViewModel
 
 @{
-    ViewData["Title"] = "Products";
+    ViewData["Title"] = "Discounts";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 @section HeadArea
     {
-    <title>Products</title>
+    <title>Discounts</title>
 }
 
     <div class="dataContainer mb-3 mt-3">
@@ -20,15 +20,13 @@
         <div class="divAnim">@ViewBag.Message</div>
     }
 
-    <table id="productsTable" class="table table-striped table-bordered tbl" style="width:100%">
+    <table id="dicountTable" class="table table-striped table-bordered tbl" style="width:100%">
         <thead>
             <tr>
                 <th>No</th>
-                <th>Name</th>
-                <th>Product Code</th>
-                <th>Count</th>
-                <th>Price</th>
                 <th>Discount(%)</th>
+                <th>Discount Start Date</th>
+                <th>Discount End Date</th>
                 <th>Modified Date</th>
                 <th>Created Date</th>
                 <th></th>
@@ -37,15 +35,13 @@
         </thead>
 
         <tbody>
-            @foreach (var product in Model.Products)
+            @foreach (var product in Model.Discounts)
             {
                 <tr>
                     <td>@product.No</td>
-                    <td>@product.Name</td>
-                    <td>@product.ProductCode</td>
-                    <td>@product.Count</td>
-                    <td>@product.Price</td>
-                    <td>@product.Discount.Discount</td>
+                    <td>@product.Discount</td>
+                    <td>@product.DiscountStartDate</td>
+                    <td>@product.DiscountEndDate</td>
                     <td>@product.IsModified</td>
                     <td>@product.IsCreated</td>
                     <td><button class="btn btn-primary bgupdate" onclick="ShowSaveModal(this)" data-id="@product.Id" id="btnUpdate"><i class='fas fa-download'></i> Update</button></td>
@@ -56,11 +52,9 @@
         <tfoot>
             <tr>
                 <th>No</th>
-                <th>Name</th>
-                <th>Product Code</th>
-                <th>Count</th>
-                <th>Price</th>
                 <th>Discount(%)</th>
+                <th>Discount Start Date</th>
+                <th>Discount End Date</th>
                 <th>Modified Date</th>
                 <th>Created Date</th>
                 <th></th>
@@ -115,7 +109,7 @@
             var dataId = $(elem).data("id");
 
             $.ajax({
-                url: "/Products/Save?id=" + dataId,
+                url: "/Discount/Save?id=" + dataId,
                 success: function (data) {
                     $('#createModal').html(data);
                     $("#createModal").modal("show");
@@ -128,12 +122,12 @@
 
         $(document).ready(function () {
 
-            $('#productsTable tfoot th').each(function () {
+            $('#dicountTable tfoot th').each(function () {
                 var title = $(this).text();
                 $(this).html('<input type="text" placeholder="Search" style="width:100%";" />');
             });
 
-            var table = $('#productsTable').DataTable();
+            var table = $('#dicountTable').DataTable();
 
             table.columns().every(function () {
                 var that = this;

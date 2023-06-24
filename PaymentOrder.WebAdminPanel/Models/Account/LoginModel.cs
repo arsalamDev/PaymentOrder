@@ -1,4 +1,4 @@
-﻿namespace PaymentOrder.WebAdminPanel.Models.Auth
+﻿namespace PaymentOrder.WebAdminPanel.Models.Account
 {
     public class LoginModel
     {

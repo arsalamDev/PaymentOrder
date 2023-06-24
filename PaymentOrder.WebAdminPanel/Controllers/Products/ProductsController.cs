@@ -76,10 +76,6 @@ namespace PaymentOrder.WebAdminPanel.Controllers.Products
                 if(products.Id != 0)
                 {
                     db.ProductRepository.Update(products);
-                    if (products.DiscountStartDate > products.DiscountEndDate)
-                    {
-                        return Content("Start date must not be higher than end date");
-                    }
                 }
                 else
                 {

@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using PaymentOrder.Core.Domain.Abstract;
 using PaymentOrder.WebAdminPanel.Mapper.Customers;
-using PaymentOrder.WebAdminPanel.Mapper.Employees;
 using PaymentOrder.WebAdminPanel.Models.Customers;
 using PaymentOrder.WebAdminPanel.Models.Employees;
 using System;

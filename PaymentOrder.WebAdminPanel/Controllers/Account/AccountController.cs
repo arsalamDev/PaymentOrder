@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using PaymentOrder.Core.Domain.Entities.Auth;
-using PaymentOrder.WebAdminPanel.Models.Auth;
+using PaymentOrder.WebAdminPanel.Models.Account;
 
 namespace PaymentOrder.WebAdminPanel.Controllers.Auth
 {
@@ -26,36 +26,21 @@ namespace PaymentOrder.WebAdminPanel.Controllers.Auth
         [HttpPost]
         public IActionResult Login(LoginModel model)
         {
-            //var user = userManager.FindByNameAsync(model.Email).Result;
-            //if(user == null)
-            //{
-            //    return Content("Username or password is incorrect");
-            //}
-
-            //var signInResult = signInManager.PasswordSignInAsync(user, model.Password, true, false).Result;
-
-            //if (signInResult.Succeeded)
-            //    return RedirectToAction("Index", "Employees");
-
-            //return Content("Username or password is incorrect");
+            var user = userManager.FindByNameAsync(model.Email).Result;
+            if (user == null)
+            {
+                return View(model);
+            }
 
 
-
-                var user = userManager.FindByNameAsync(model.Email).Result;
-                if (user == null)
-                {
-                    return View(model);
-                }
+            var signInResult = signInManager.PasswordSignInAsync(user, model.Password, true, false).Result;
 
 
-                var signInResult = signInManager.PasswordSignInAsync(user, model.Password, true, false).Result;
+            if (signInResult.Succeeded)
+            {
 
-
-                if (signInResult.Succeeded)
-                {
-
-                    return RedirectToAction("Index", "Employees");
-                }
+                return RedirectToAction("Index", "Employees");
+            }
             return View(model);
         }
 
